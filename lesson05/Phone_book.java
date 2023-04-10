@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Phone_book {
 
+    //Реализуйте структуру телефонной книги с помощью HashMap, учитывая, что 1 человек может иметь несколько телефонов.
     public static Map<String, List<String>> getPhoneBook(){
         Map<String, List<String>> phone_book = new HashMap<>();
         phone_book.put("Иван Иванов", Arrays.asList("767676767676", "12121212121", "343434343434"));
@@ -27,6 +28,28 @@ public class Phone_book {
 
         return phone_book;
     }
+
+    /*Пусть дан список сотрудников:
+        Иван Иванов
+        Светлана Петрова
+        Кристина Белова
+        Анна Мусина
+        Анна Крутова
+        Иван Юрин
+        Петр Лыков
+        Павел Чернов
+        Петр Чернышов
+        Мария Федорова
+        Марина Светлова
+        Мария Савина
+        Мария Рыкова
+        Марина Лугова
+        Анна Владимирова
+        Иван Мечников
+        Петр Петин
+        Иван Ежов
+        Написать программу, которая найдёт и выведет повторяющиеся имена с количеством повторений.
+     */
 
     public static List<String> namesList(Map<String, List<String>> book){
         List<String> names = new ArrayList<>();
@@ -56,6 +79,7 @@ public class Phone_book {
         return repeat_names;
     }
 
+    //найдёт и выведет повторяющиеся имена с количеством повторений. Отсортировать по убыванию популярности.
     public static Map<String, Integer> reversSort(Map<String, Integer> repeat_names){
         Map<String, Integer> sorted_names = new LinkedHashMap<>();
 
@@ -73,8 +97,10 @@ public class Phone_book {
             System.out.println(item);
         }
 
-        System.out.println("\nTop popular persons: ");
-        Map<String, Integer> names = reversSort( repeatNames( namesList( phone_book ) ) );
+        Map<String, Integer> pure_names = repeatNames( namesList( phone_book ) );
+
+        System.out.println("\nTop popular persons by reversSort: ");
+        Map<String, Integer> names = reversSort( pure_names );
         for(var name: names.entrySet()){
             System.out.println(name);
         }

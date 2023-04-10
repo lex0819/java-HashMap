@@ -17,10 +17,10 @@ public class pair_count {
         System.out.println("Enter some numbers divided by space: ");
         int[] input_str = Arrays.stream(iscanner.nextLine().split(" ")).mapToInt(Integer::parseInt).toArray(); //got all numbers from console
         int counter_pair = 0;
-        int numbers_len = input_str.length;
 
 //        similar Python
-//        for (int i=0; i< numbers_len - 1; i++){
+//        int numbers_len = input_str.length;
+//         for (int i=0; i< numbers_len - 1; i++){
 //            for (int j = i+1; j < numbers_len; j++){
 //                if(input_str[i] == input_str[j]){
 //                    counter_pair++;
